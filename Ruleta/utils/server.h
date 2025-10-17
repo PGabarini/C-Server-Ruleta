@@ -1,8 +1,8 @@
 #ifndef server_h
 #define server_h
 
-#include "main.h"
 #include <netinet/in.h>
+#include <sys/types.h>
 
 #define BUFFER_SIZE 16000
 

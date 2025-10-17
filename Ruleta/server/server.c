@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "server.h"
+#include "../utils/server.h"
 
 struct Server server_Constructor(int domain, int port, int service, int protocol, int backlog, u_long interface, void (*launch)(struct Server *server)) {
     struct Server server;
@@ -55,12 +55,13 @@ void launch(struct Server *server) {
                          "<!DOCTYPE html>\r\n"
                          "<html>\r\n"
                          "<head>\r\n"
-                         "<title>Testing Basic HTTP-SERVER</title>\r\n"
+                         "<title>HTTP-SERVER</title>\r\n"
                          "</head>\r\n"
                          "<body>\r\n"
-                         "Hello, Ahmed!\r\n"
+                         "Hola loco!\r\n"
                          "</body>\r\n"
                          "</html>\r\n";
         write(new_socket, response, strlen(response));
         close(new_socket);
     }
+}
